@@ -4,11 +4,11 @@ import { useState, useEffect } from "react";
 import CardTopCitiesNquality from "./CardTopCitiesNquality";
 
 const GetTopCitiesNquality = () => {
-  const [data, setData] = useState([]);
+  const [communesN, setCommunesN] = useState([]);
 
   const construireData = (dataFetched) => {
     console.log("construire data");
-    setData(
+    setCommunesN(
       dataFetched
         .map((d) => ({
           codeCommune: d.code_commune,
@@ -36,13 +36,16 @@ const GetTopCitiesNquality = () => {
   }, []);
 
   useEffect(() => {
-    console.log("DATA", data);
-  }, [data]);
+    console.log("DATA", communesN);
+  }, [communesN]);
 
   return (
     <>
+      <h2 className="text-black text-center w-1/3 mx-auto border-2 rounded-xl shadow-sm p-5 bg-sky-300/30 m-5 ">
+        Top des communes qualités N{" "}
+      </h2>
       <ul className="flex flex-wrap max-w-full w-3/4 mx-auto ">
-        {data.map((el) => {
+        {communesN.map((el) => {
           return (
             <CardTopCitiesNquality
               key={el.codeCommune}
