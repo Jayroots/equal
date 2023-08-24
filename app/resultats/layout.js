@@ -4,10 +4,5 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  return (
-    <main>
-      Bonjour page resultats
-      {children}
-    </main>
-  );
+  return <main>{children}</main>;
 }
