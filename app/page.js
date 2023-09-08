@@ -1,21 +1,19 @@
-import GetTopCitiesNquality from "./[components]/GetTopCitiesNquality";
+import TopConformeVilles from "./(components)/TopConformeVilles";
+import TopDepartement from "./(components)/TopDepartement";
+import TopNvilles from "./(components)/TopNvilles";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="">
-      <header className="relative">
-        <Image
-          className="h-1/2 w-full"
-          width={5396}
-          height={3597}
-          src="/fond-texture-eau.jpg"
-          alt="image d acceuil E qual"
-        />
-
-        <div className="flex justify-start content-center absolute top-10 left-10">
+    <main
+      style={{ backgroundImage: "url('/fond-texture-eau.jpg')" }}
+      className="bg-cover bg-center h-screen"
+    >
+      <section className="flex flex-wrap p-6  md:justify-around md:items-center ">
+        <div className="md:w-2/5">
+          {/* absolute top-10 left-10 */}
           <Image
-            className="w-2/5 hover:scale-105 "
+            className="hover:scale-105 "
             width={6331}
             height={4297}
             src="/gif-eau.png"
@@ -23,22 +21,23 @@ export default function Home() {
           />
         </div>
 
-        <div className=" opacity-80 w-2/5 absolute top-10 right-10 bg-sky-400 rounded-lg shadow-md hover:bg-sky-300 text-white p-5">
-          <h1 className="text-center text-3xl">Hey l&apos;eau !</h1>
-          <br />
-          <p className="text-2xl text-center ">
+        <div className="  opacity-90  bg-sky-400 rounded-lg shadow-md hover:bg-sky-300 text-white p-5 md:w-2/5 md:h-1/2">
+          {/*  absolute top-10 right-10 */}
+
+          <p className="text-3xl text-center ">
             Bienvenue sur le site national analysant la qualité de l&apos;eau de
-            votre ville 😊
-            <br />
+            votre ville ! 😊
+          </p>
+          <p>
             Par un simple clic, retrouvez les résultats de la conformité des
-            prélèvements
-            <br />
-            sur les dernières années.
+            prélèvements sur les dernières années.
           </p>
         </div>
-      </header>
+      </section>
 
-      <GetTopCitiesNquality />
+      <TopConformeVilles />
+      <TopNvilles />
+      <TopDepartement />
     </main>
   );
 }
