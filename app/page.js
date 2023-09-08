@@ -1,3 +1,5 @@
+import TopConformeVilles from "./(components)/TopConformeVilles";
+import TopDepartement from "./(components)/TopDepartement";
 import TopNvilles from "./(components)/TopNvilles";
 import Image from "next/image";
 
@@ -33,7 +35,9 @@ export default function Home() {
         </div>
       </section>
 
+      <TopConformeVilles />
       <TopNvilles />
+      <TopDepartement />
     </main>
   );
 }

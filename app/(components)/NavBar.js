@@ -34,22 +34,18 @@ function NavBar() {
             isMenuOpen ? "block fixed top-35 right-0  p-8 bg-white" : "hidden"
           } lg:flex lg:flex-row `}
         >
-          <li className="px-5 rounded-lg hover:bg-sky-300 hover:text-white hover:scale-125">
+          <li className="px-5 rounded-lg hover:bg-sky-300 hover:text-white hover:scale-105">
             <Link href="/" onClick={closeMenu}>
               Accueil
             </Link>
           </li>
-          <li className="px-5 rounded-lg hover:bg-sky-300 hover:text-white hover:scale-125">
+          <li className="px-2 rounded-lg hover:bg-sky-300 hover:text-white hover:scale-105">
             <Link href="/resultats" onClick={closeMenu}>
-              Résultats
+              Recherche par ville
             </Link>
           </li>
-          <li className="px-5 rounded-lg hover:bg-sky-300 hover:text-white hover:scale-125">
-            <Link href="/partenaires" onClick={closeMenu}>
-              Partenaires
-            </Link>
-          </li>
-          <li className="px-5 rounded-lg hover:bg-sky-300 hover:text-white hover:scale-125">
+
+          <li className="px-5 rounded-lg hover:bg-sky-300 hover:text-white hover:scale-105">
             <Link href="/contact" onClick={closeMenu}>
               Contact
             </Link>
