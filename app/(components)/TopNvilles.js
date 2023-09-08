@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import CardTopCitiesNquality from "./CardTopCitiesNquality";
+import TopNvillesCard from "./TopNvillesCard";
 
 const GetTopCitiesNquality = () => {
   const [communesN, setCommunesN] = useState([]);
@@ -40,14 +40,17 @@ const GetTopCitiesNquality = () => {
   }, [communesN]);
 
   return (
-    <>
-      <h2 className="text-black text-center w-1/3 mx-auto border-2 rounded-xl shadow-sm p-5 bg-sky-300/30 m-5 ">
+    <div
+      /*  style={{ backgroundImage: "url('/goutte.jpg')" }}*/
+      className="bg-slate-100 p-5"
+    >
+      <h2 className="text-white font-semibold text-center text-1xl w-1/3 mx-auto border-2 rounded-xl shadow-sm p-5 bg-sky-300 m-5 ">
         Top des communes qualités N{" "}
       </h2>
-      <ul className="flex flex-wrap max-w-full w-3/4 mx-auto ">
+      <ul className="flex flex-wrap justify-center max-w-full w-4/5 mx-auto ">
         {communesN.map((el) => {
           return (
-            <CardTopCitiesNquality
+            <TopNvillesCard
               key={el.codeCommune}
               id={el.codeCommune}
               nom_commune={el.nomCommune}
@@ -56,7 +59,7 @@ const GetTopCitiesNquality = () => {
           );
         })}
       </ul>
-    </>
+    </div>
   );
 };
 
