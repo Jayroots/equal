@@ -12,7 +12,6 @@ const TopNvilles = () => {
   };
 
   const construireData = (dataFetched) => {
-    console.log("construire data");
     setCommunesN(
       dataFetched
         .map((d) => ({
@@ -28,7 +27,6 @@ const TopNvilles = () => {
           []
         )
     );
-    console.log("construire data fin");
   };
 
   useEffect(() => {
@@ -40,9 +38,7 @@ const TopNvilles = () => {
       .catch((err) => console.error(err));
   }, []);
 
-  useEffect(() => {
-    console.log("DATA", communesN);
-  }, [communesN]);
+  useEffect(() => {}, [communesN]);
 
   return (
     <div

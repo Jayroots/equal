@@ -9,19 +9,15 @@ const Reseaux = ({ reseaux }) => {
             <th>Liste des réseaux rattachés à la commune </th>
           </tr>
         </thead>
-        {reseaux.map((el) => {
-          return (
-            <>
-              <tbody>
-                <tr>
-                  <td className=" bg-blue-100 border-separate " key={el.nom}>
-                    {el.nom}
-                  </td>
-                </tr>
-              </tbody>
-            </>
-          );
-        })}
+        <tbody>
+          {reseaux.map((el) => {
+            return (
+              <tr key={el.nom}>
+                <td className=" bg-blue-100 border-separate ">{el.nom}</td>
+              </tr>
+            );
+          })}
+        </tbody>
       </table>
     </div>
   );

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Polluants from "./Polluants";
 import Reseaux from "./Reseaux";
 import { data } from "autoprefixer";
@@ -30,7 +29,7 @@ const construireData = (dataFetched) => {
   };
 };
 
-async function CardCityDetailsById({ id: codeCommune }) {
+async function ResultatParVille({ id: codeCommune }) {
   let commune = await fetchDatas(codeCommune);
 
   return (
@@ -78,4 +77,4 @@ async function CardCityDetailsById({ id: codeCommune }) {
   );
 }
 
-export default CardCityDetailsById;
+export default ResultatParVille;
