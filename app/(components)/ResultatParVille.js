@@ -35,7 +35,7 @@ async function CardCityDetailsById({ id: codeCommune }) {
 
   return (
     <>
-      <ul className="flex w-4/5 mx-auto justify-center border-2 rounded-xl shadow-sm p-5 text-white bg-sky-300 m-5 lg:w-3/5 ">
+      <ul className="flex w-4/5 mx-auto justify-center border-2 rounded-xl shadow-sm p-5 text-white bg-sky-300 m-5 lg:w-2/5 ">
         {commune !== undefined && (
           <div className="flex flex-col	 ">
             <div className="text-center p-4 lg:text-left">

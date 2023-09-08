@@ -11,7 +11,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fr">
+    <html className="scroll-smooth" lang="fr">
       <body>
         <header className="flex flex-row justify-between py-10 w-full ">
           <section className="flex flex-row px-5">
@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
                 style={{ fontFamily: "Ysabeau Office, sans-serif" }}
               >
                 E Qual
-              </h1>{" "}
+              </h1>
             </Link>
           </section>
 
