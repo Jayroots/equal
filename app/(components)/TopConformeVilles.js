@@ -12,7 +12,6 @@ const TopConformeVilles = () => {
   };
 
   const construireData = (dataFetched) => {
-    console.log("construire data");
     setCommunesN(
       dataFetched
         .map((d) => ({
@@ -28,7 +27,6 @@ const TopConformeVilles = () => {
           []
         )
     );
-    console.log("construire data fin");
   };
 
   useEffect(() => {
@@ -37,12 +35,10 @@ const TopConformeVilles = () => {
     )
       .then((response) => response.json())
       .then((res) => construireData(res.data))
-      .catch(() => console.error(err));
+      .catch((err) => console.error(err));
   }, []);
 
-  useEffect(() => {
-    console.log("DATA", communesN);
-  }, [communesN]);
+  useEffect(() => {}, [communesN]);
 
   return (
     <div

@@ -11,7 +11,6 @@ const TopDepartement = () => {
   };
 
   const construireData = (dataFetched) => {
-    console.log("construire data departement");
     setCommunesN(
       dataFetched
         .map((d) => ({
@@ -28,7 +27,6 @@ const TopDepartement = () => {
           []
         )
     );
-    console.log("construire data departement fin");
   };
 
   useEffect(() => {
@@ -40,9 +38,7 @@ const TopDepartement = () => {
       .catch(() => console.error(err));
   }, []);
 
-  useEffect(() => {
-    console.log("DATA", communesN);
-  }, [communesN]);
+  useEffect(() => {}, [communesN]);
 
   return (
     <div

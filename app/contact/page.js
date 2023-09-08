@@ -1,8 +1,21 @@
-export default function Contact() {
+import FormulaireContact from "../(components)/FormulaireContact";
+import Image from "next/image";
 
-    return (
-      <main className="flex min-h-screen flex-col items-center justify-between p-24">
-       Bonjour Contact
-      </main>
-    )
-  }
+export default function Contact() {
+  return (
+    <main className="flex flex-wrap p-6  md:justify-around md:items-center  ">
+      <div className="md:w-2/5 p-6">
+        {/* absolute top-10 left-10 */}
+        <Image
+          className="hover:scale-105 "
+          width={6331}
+          height={4297}
+          src="/gif-eau.png"
+          alt="gif eau robinet geant"
+        />
+      </div>
+
+      <FormulaireContact />
+    </main>
+  );
+}
