@@ -1,4 +1,4 @@
-"use client";
+/* "use client";
 
 import { useState } from "react";
 import { useLoadScript } from "@react-google-maps/api";
@@ -100,3 +100,4 @@ const PlacesAutocomplete = ({ setSelected }) => {
 };
 
 export default Places;
+ */
