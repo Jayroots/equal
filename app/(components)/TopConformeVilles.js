@@ -4,14 +4,21 @@ import { useState, useEffect } from "react";
 import TopConformeVillesCard from "./TopConformeVillesCard";
 
 const TopConformeVilles = () => {
-  const [communesN, setCommunesN] = useState([]);
+  const [communesN, setCommunesN] = useState();
   const [menuOuvert, setMenuOuvert] = useState(false);
+  const [fetchEnCours, setFetchEnCours] = useState(false);
 
   const handleClick = () => {
-    setMenuOuvert(!menuOuvert);
+    if (!communesN) {
+      lancerFetch();
+    } else {
+      setMenuOuvert(!menuOuvert);
+    }
   };
 
   const construireData = (dataFetched) => {
+    setFetchEnCours(false);
+    setMenuOuvert(true);
     setCommunesN(
       dataFetched
         .map((d) => ({
@@ -29,16 +36,15 @@ const TopConformeVilles = () => {
     );
   };
 
-  useEffect(() => {
+  const lancerFetch = () => {
+    setFetchEnCours(true);
     fetch(
       "https://hubeau.eaufrance.fr/api/v1/qualite_eau_potable/resultats_dis?conformite_limites_bact_prelevement=C&conformite_limites_pc_prelevement=C&conformite_references_bact_prelevement=C&conformite_references_pc_prelevement=C&date_max_prelevement=2022-12-31%2023%3A59%3A59&date_min_prelevement=2022-12-01%2000%3A00%3A01&size=100"
     )
       .then((response) => response.json())
       .then((res) => construireData(res.data))
       .catch((err) => console.error(err));
-  }, []);
-
-  useEffect(() => {}, [communesN]);
+  };
 
   return (
     <div
@@ -54,6 +60,7 @@ const TopConformeVilles = () => {
           Cliquez pour voir les résultats
         </p>
       </button>
+      {fetchEnCours && <div>Chargement en cours...</div>}
       {menuOuvert && (
         <ul className="flex flex-wrap justify-center w-4/5 lg:w-11/12 mx-auto ">
           {communesN.map((el) => {
