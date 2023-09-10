@@ -21,10 +21,7 @@ export default function RootLayout({ children }) {
             {/* <img className="w-9" src="/goutte.jpg" alt="logo E Qual"></img> */}
             <Link href="/">
               {" "}
-              <h1
-                className=" text-4xl px-5 font-semibold hover:scale-125"
-                style={{ fontFamily: "Ysabeau Office, sans-serif" }}
-              >
+              <h1 className=" font-sans text-4xl px-5 font-semibold hover:scale-125">
                 E Qual
               </h1>
             </Link>
