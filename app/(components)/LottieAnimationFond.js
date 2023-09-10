@@ -1,16 +1,16 @@
 "use client";
 import { useEffect, useRef } from "react";
 import lottie from "lottie-web";
-import animationData from "../../public/eau-animation.json";
+import animationData from "../../public/fond-eau-anime.json";
 
-function LottieAnimation() {
+function LottieAnimationFond() {
   const containerRef = useRef(null);
 
   useEffect(() => {
     const animation = lottie.loadAnimation({
       container: containerRef.current,
       renderer: "svg",
-      loop: true,
+      loop: false,
       autoplay: true,
       animationData: animationData, //
     });
@@ -20,7 +20,7 @@ function LottieAnimation() {
     };
   }, []);
 
-  return <div className="" ref={containerRef}></div>;
+  return <div className=" " ref={containerRef}></div>;
 }
 
-export default LottieAnimation;
+export default LottieAnimationFond;

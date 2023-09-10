@@ -1,5 +1,6 @@
 import Localisation from "./(components)/Localisation";
 import LottieAnimation from "./(components)/LottieAnimation";
+
 import NavBar from "./(components)/NavBar";
 import "./globals.css";
 import Link from "next/link";
@@ -12,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html className="scroll-smooth" lang="fr">
-      <body>
+      <body className="">
         <header className="flex flex-row justify-between py-10 w-full ">
           <section className="flex flex-row px-5">
             <div className="w-12">

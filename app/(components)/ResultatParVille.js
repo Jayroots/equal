@@ -33,7 +33,7 @@ async function ResultatParVille({ id: codeCommune }) {
 
   return (
     <>
-      <ul className="flex w-4/5 mx-auto justify-center border-2 rounded-xl shadow-sm p-5 text-white bg-sky-300 m-5 lg:w-2/5 ">
+      <ul className=" flex w-4/5 mx-auto justify-center border-2 rounded-xl shadow-sm p-5 text-white bg-sky-300 m-5 lg:w-2/5 ">
         {commune !== undefined && (
           <div className="flex flex-col	 ">
             <div className="text-center p-4 lg:text-left">
@@ -61,7 +61,7 @@ async function ResultatParVille({ id: codeCommune }) {
         )}
       </ul>
       <Dernieres5valeurs codeCommune={codeCommune} />
-      <div className="flex flex-wrap p-10 justify-center">
+      <div className=" flex flex-wrap p-10 justify-center">
         <Polluants codeCommune={codeCommune} codeParametre={1337} />
         <Polluants codeCommune={codeCommune} codeParametre={1338} />
         <Polluants codeCommune={codeCommune} codeParametre={1339} />
@@ -69,7 +69,7 @@ async function ResultatParVille({ id: codeCommune }) {
         <Polluants codeCommune={codeCommune} codeParametre={1310} />
       </div>
 
-      <div className="flex justify-center m-6">
+      <div className=" flex justify-center m-6">
         <Reseaux codeCommune={codeCommune} reseaux={commune.reseaux} />
       </div>
     </>

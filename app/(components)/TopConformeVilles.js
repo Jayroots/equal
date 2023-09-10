@@ -43,11 +43,11 @@ const TopConformeVilles = () => {
   return (
     <div
       /*  style={{ backgroundImage: "url('/goutte.jpg')" }}*/
-      className="bg-slate-100 p-5 text-center"
+      className="bg-slate-100 p-5 text-center "
     >
       <button
         onClick={handleClick}
-        className="text-white font-semibold text-center text-1xl w-4/5 lg:w-1/3 mx-auto border-2 rounded-xl shadow-sm p-5 bg-sky-300 m-5 hover:scale-105"
+        className="text-white font-semibold text-center text-1xl w-4/5 lg:w-1/3 mx-auto border-2 rounded-xl shadow-sm p-5 bg-sky-300 m-5 hover:scale-105 animate-pulse"
       >
         Top des communes où la qualité est conforme (C) fin 2022
         <p className="text-sm font-extralight p-2">

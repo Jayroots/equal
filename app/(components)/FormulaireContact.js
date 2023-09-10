@@ -28,7 +28,7 @@ const FormulaireContact = () => {
     >
       <label>* Nom</label>
       <input
-        className="lg:w-1/3 border-2 rounded-md m-2 p-1"
+        className="lg:w-1/3 border-2 rounded-md m-2 p-1 hover:bg-sky-200"
         type="text"
         name="name"
         required
@@ -36,7 +36,7 @@ const FormulaireContact = () => {
       <label>* Prénom</label>
 
       <input
-        className="lg:w-1/3 border-2 rounded-md m-2 p-1"
+        className="lg:w-1/3 border-2 rounded-md m-2 p-1 hover:bg-sky-200"
         type="text"
         name="firstname"
         required
@@ -44,7 +44,7 @@ const FormulaireContact = () => {
       <label>Email</label>
 
       <input
-        className="lg:w-1/3 border-2 rounded-md m-2 p-1"
+        className="lg:w-1/3 border-2 rounded-md m-2 p-1 hover:bg-sky-200"
         type="email"
         name="email"
         required
@@ -52,7 +52,7 @@ const FormulaireContact = () => {
       <label>Ville</label>
 
       <input
-        className="lg:w-1/3 border-2 rounded-md m-2 p-1"
+        className="lg:w-1/3 border-2 rounded-md m-2 p-1 hover:bg-sky-200"
         type="text"
         name="firstname"
         required
@@ -60,7 +60,7 @@ const FormulaireContact = () => {
       <label>Message</label>
 
       <textarea
-        className="border-2 rounded-md m-2 p-1"
+        className="border-2 rounded-md m-2 p-1 hover:bg-sky-200"
         name="message"
         rows="7"
         required
