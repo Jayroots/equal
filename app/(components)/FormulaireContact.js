@@ -22,7 +22,7 @@ const FormulaireContact = () => {
 
   return (
     <form
-      className="flex flex-col  w-4/5 lg:w-1/2 mx-auto border-2 border-sky-100 shadow-md rounded-md p-5"
+      className="flex flex-col  w-4/5 lg:w-1/2 mx-auto border-2 bg-white/90 border-sky-100 shadow-md rounded-md p-5"
       ref={form}
       onSubmit={sendEmail}
     >

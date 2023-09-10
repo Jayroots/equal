@@ -6,12 +6,14 @@ const Dernieres5valeurs = ({ codeCommune }) => {
   const [valeurs, setValeurs] = useState([]);
 
   useEffect(() => {
-    fetch(
-      `https://hubeau.eaufrance.fr/api/v1/qualite_eau_potable/resultats_dis?code_commune=${codeCommune}&size=5`
-    )
-      .then((response) => response.json())
-      .then((res) => setValeurs(res.data))
-      .catch(() => console.error(err));
+    setTimeout(() => {
+      fetch(
+        `https://hubeau.eaufrance.fr/api/v1/qualite_eau_potable/resultats_dis?code_commune=${codeCommune}&size=5`
+      )
+        .then((response) => response.json())
+        .then((res) => setValeurs(res.data))
+        .catch(() => console.error(err));
+    }, 200);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
