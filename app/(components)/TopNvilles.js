@@ -47,7 +47,7 @@ const TopNvilles = () => {
     >
       <button
         onClick={handleClick}
-        className="text-white font-semibold text-center text-1xl w-4/5 lg:w-1/3 mx-auto border-2 rounded-xl shadow-sm p-5 bg-orange-400 m-5 hover:scale-105"
+        className="text-white font-semibold text-center text-1xl w-4/5 lg:w-1/3 mx-auto border-2 rounded-xl shadow-sm p-5 bg-orange-400 m-5 hover:scale-105 animate-pulse"
       >
         Top des communes où la qualités est non conforme (N)
         <p className="text-sm font-extralight p-2">

@@ -36,7 +36,7 @@ const Localisation = () => {
     <>
       <button
         onClick={handleClick}
-        className="bg-sky-300 p-2 text-white rounded-lg  hover:bg-sky-200"
+        className="animate-bounce bg-sky-300 p-2 text-white rounded-lg  hover:bg-sky-200"
       >
         Localisez-moi !
       </button>
