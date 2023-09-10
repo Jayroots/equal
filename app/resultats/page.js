@@ -12,7 +12,7 @@ export default function Resultats() {
         {/*  absolute top-10 right-10 */}
         <p className="text-3xl text-center ">
           En sélectionnant votre ville, vous pourrez observer différentes
-          analyses sur la qualité de l'eau
+          analyses sur la qualité de l&apos;eau
         </p>
         <br />
         <p>Voici les détails que vous obtiendrez si la donnée est présente :</p>
@@ -23,7 +23,7 @@ export default function Resultats() {
           <li>
             {" "}
             Description : conclusion sur les exigences de qualité en vigueur
-            pour l'ensemble des paramètres mesurés.
+            pour l&apos;ensemble des paramètres mesurés.
           </li>
           <li>Résultats des 5 derniers prélèvements </li>
           <li>Analyse sur les 2 dernières années des prélèvements de :</li>

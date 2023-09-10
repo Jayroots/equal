@@ -12,6 +12,7 @@ const Dernieres5valeurs = ({ codeCommune }) => {
       .then((response) => response.json())
       .then((res) => setValeurs(res.data))
       .catch(() => console.error(err));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
