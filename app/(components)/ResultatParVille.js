@@ -1,6 +1,5 @@
 import Polluants from "./Polluants";
 import Reseaux from "./Reseaux";
-import { data } from "autoprefixer";
 import Dernieres5valeurs from "./Dernieres5valeurs";
 
 let fetchDatas = async (codeCommune) => {

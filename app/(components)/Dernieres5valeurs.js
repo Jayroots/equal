@@ -16,11 +16,17 @@ const Dernieres5valeurs = ({ codeCommune }) => {
   }, []);
 
   return (
-    <div className="flex flex-wrap justify-center p-4">
+    <div className="flex flex-wrap justify-center items-center p-4 lg:w-3/5 lg:mx-auto">
       {valeurs !== undefined ? (
         valeurs.map((el) => (
-          <div className="p-5" key={el.codeCommune}>
-            <ul className=" border-2 rounded-xl shadow-sm p-5">
+          <div
+            className="p-5"
+            key={`${el.codeCommune}-${el.libelle_parametre}`}
+          >
+            <ul
+              key={`${el.codeCommune}-${el.libelle_parametre}`}
+              className=" border-2 rounded-xl shadow-sm p-5"
+            >
               <li>Parametre : {el.libelle_parametre}</li>
               <li>Date du prélèvement : {el.date_prelevement.split("T")[0]}</li>
               <li>

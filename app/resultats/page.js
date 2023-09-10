@@ -1,4 +1,4 @@
-import BarreRechercheTest from "../(components)/BarreRechercheTest";
+import BarreRecherche from "../(components)/BarreRecherche";
 
 export default function Resultats() {
   return (
@@ -6,7 +6,7 @@ export default function Resultats() {
       style={{ backgroundImage: "url('/fond-texture-eau.jpg')" }}
       className="bg-cover bg-center h-screen flex items-center flex-col"
     >
-      <BarreRechercheTest />
+      <BarreRecherche />
 
       <div className="opacity-90  bg-sky-400 rounded-lg shadow-md hover:bg-sky-300 text-white p-5 md:w-2/5  ">
         {/*  absolute top-10 right-10 */}

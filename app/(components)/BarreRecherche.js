@@ -1,103 +1,71 @@
-/* "use client";
+"use client";
 
 import { useState } from "react";
-import { useLoadScript } from "@react-google-maps/api";
 import { useRouter } from "next/navigation";
+import codePostauxReduits from "../(donnees)/codePostauxReduits";
 
-import usePlacesAutocomplete, {
-  getGeocode,
-  getLatLng,
-} from "use-places-autocomplete";
-
-import {
-  Combobox,
-  ComboboxInput,
-  ComboboxPopover,
-  ComboboxList,
-  ComboboxOption,
-} from "@reach/combobox";
-
-const Places = () => {
-  const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyDsTW2oRj3VCk_Rk6XUnr3ZOY1q79ieaAE",
-    libraries: ["places"],
-  });
-
-  if (!isLoaded) return <div> Loading ... </div>;
-
-  return <Map />;
-};
-
-function Map() {
-  const [selected, setSelected] = useState(null);
-
-  return (
-    <>
-      <div className="flex justify-center p-6">
-        <PlacesAutocomplete setSelected={setSelected} />
-      </div>
-    </>
-  );
-}
-
-const PlacesAutocomplete = ({ setSelected }) => {
+const BarreRecherche = () => {
+  const [value, setValue] = useState("");
+  const [listeOuverte, setListeOuverte] = useState(true);
+  const [selectedCodeCommune, setSelectedCodeCommune] = useState(""); // Stocke le code de commune sélectionné
   const router = useRouter();
-  const {
-    ready,
-    value,
-    setValue,
-    suggestions: { status, data },
-    clearSuggestions,
-  } = usePlacesAutocomplete();
 
-  const handleSelect = async (address) => {
-    setValue(address, false);
-    clearSuggestions();
+  function handleChange(event) {
+    setValue(event.target.value);
+  }
 
-    const results = await getGeocode({ address });
-    const { lat, lng } = await getLatLng(results[0]);
-    fetch(
-      `https://wxs.ign.fr/essentiels/geoportail/geocodage/rest/0.1/reverse?lon=${lng}&lat=${lat}&limit=1`
-    )
-      .then((res) => res.json())
-      .then((response) =>
-        router.push("/resultats/" + response.features[0].properties.citycode)
-      );
-  };
+  function handleClick() {
+    if (selectedCodeCommune) {
+      router.push(`/resultats/${selectedCodeCommune}`);
+    }
+  }
+
+  function handleListItemClick(codeCommune, nomCommune) {
+    setSelectedCodeCommune(codeCommune); // Met à jour le code de commune sélectionné
+    setListeOuverte(false); // Cache la liste après la sélection
+    setValue(nomCommune); // Efface la valeur de l'input
+  }
 
   return (
-    <Combobox onSelect={handleSelect}>
-      <ComboboxInput
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-        disabled={!ready}
-        className="combobox-input p-4 border-2 rounded-md"
-        placeholder="Rechercher une ville"
-      />
-      <ComboboxPopover>
-        <ComboboxList className="bg-white">
-          {status === "OK" &&
-            data
-              .map(({ place_id, description }) => (
-                <ComboboxOption
-                  key={place_id}
-                  value={description.split(",")[0].split(" ")[0]}
-                />
-              ))
-              .reduce(
-                (agregation, courant) =>
-                  !agregation.find(
-                    (el) => el.description === courant.description
-                  )
-                    ? [...agregation, courant]
-                    : agregation,
-                []
-              )}
-        </ComboboxList>
-      </ComboboxPopover>
-    </Combobox>
+    <div className="flex flex-col p-6">
+      <div>
+        <input
+          className="border-2 rounded-md p-2"
+          type="text"
+          value={value}
+          onChange={handleChange}
+          placeholder="Rechercher une ville"
+        />
+        <button
+          onClick={handleClick}
+          className="bg-sky-400 text-white p-2 rounded-md m-2  hover:bg-sky-300"
+        >
+          Rechercher
+        </button>
+        <ul className="bg-white p-2">
+          {value &&
+            listeOuverte &&
+            codePostauxReduits
+
+              .filter((el) =>
+                el.nomCommune.toLowerCase().includes(value.toLowerCase())
+              )
+
+              .map((element, index) => (
+                <li
+                  className="hover:cursor-pointer"
+                  onClick={() =>
+                    handleListItemClick(element.codeCommune, element.nomCommune)
+                  } // Utilisez le codeCommune comme argument
+                  key={index}
+                  id={element.codeCommune}
+                >
+                  {element.nomCommune}
+                </li>
+              ))}
+        </ul>
+      </div>
+    </div>
   );
 };
-
-export default Places;
- */
+export default BarreRecherche;
