@@ -30,42 +30,47 @@ const FormulaireContact = () => {
       ref={form}
       onSubmit={sendEmail}
     >
-      <label>Nom</label>
+      <label htmlFor="name">Nom</label>
       <input
         className="lg:w-1/3 border-2 rounded-md m-2 p-1 hover:bg-sky-200"
         type="text"
         name="name"
+        id="name"
         required
       />
-      <label>Prénom</label>
+      <label htmlFor="firstname">Prénom</label>
 
       <input
         className="lg:w-1/3 border-2 rounded-md m-2 p-1 hover:bg-sky-200"
         type="text"
         name="firstname"
+        id="firstname"
         required
       />
-      <label>Email</label>
+      <label htmlFor="email">Email</label>
 
       <input
         className="lg:w-1/3 border-2 rounded-md m-2 p-1 hover:bg-sky-200"
         type="email"
         name="email"
+        id="email"
         required
       />
-      <label>Ville</label>
+      <label htmlFor="ville">Ville</label>
 
       <input
         className="lg:w-1/3 border-2 rounded-md m-2 p-1 hover:bg-sky-200"
         type="text"
         name="ville"
+        id="ville"
         required
       />
-      <label>Message</label>
+      <label htmlFor="message">Message</label>
 
       <textarea
         className="border-2 rounded-md m-2 p-1 hover:bg-sky-200"
         name="message"
+        id="message"
         rows="7"
         required
       ></textarea>
