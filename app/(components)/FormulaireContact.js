@@ -1,10 +1,13 @@
 "use client";
 
 import emailjs from "emailjs-com";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
+import Link from "next/link";
 /* import { Button, Form, Input, InputNumber } from "antd"; */
 
 const FormulaireContact = () => {
+  const [send, setSend] = useState(false);
+
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -18,9 +21,10 @@ const FormulaireContact = () => {
     );
 
     e.target.reset();
+    setSend(true);
   };
 
-  return (
+  return send === false ? (
     <form
       className="flex flex-col  w-4/5 lg:w-1/2 mx-auto border-2 bg-white/90 border-sky-100 shadow-md rounded-md p-5"
       ref={form}
@@ -54,7 +58,7 @@ const FormulaireContact = () => {
       <input
         className="lg:w-1/3 border-2 rounded-md m-2 p-1 hover:bg-sky-200"
         type="text"
-        name="firstname"
+        name="ville"
         required
       />
       <label>Message</label>
@@ -72,6 +76,18 @@ const FormulaireContact = () => {
         Envoyez
       </button>
     </form>
+  ) : (
+    <section className="flex items-center flex-col text-center text-2xl">
+      <h1>Votre email a bien été envoyé </h1>
+      <br />
+      <p>Nous prendrons contact avec vous très rapidement...</p>
+      <br />
+      <Link href="/">
+        <button className="bg-sky-300 hover:bg-sky-200 text-white p-2 rounded-md">
+          Retour à l&apos;accueil
+        </button>
+      </Link>
+    </section>
   );
 };
 
