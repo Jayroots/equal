@@ -34,18 +34,19 @@ function NavBar() {
               : "hidden"
           } lg:flex lg:flex-row `}
         >
-          <li className="px-2 rounded-lg hover:bg-sky-300 hover:text-white hover:scale-105">
+          <li className="px-4 rounded-lg hover:bg-sky-300 hover:text-white hover:scale-105">
             <Link href="/" onClick={closeMenu}>
               Accueil
             </Link>
           </li>
-          <li className="px-2 rounded-lg hover:bg-sky-300 hover:text-white hover:scale-105">
+          {!isMenuOpen && "|"}
+          <li className="px-4 rounded-lg hover:bg-sky-300 hover:text-white hover:scale-105">
             <Link href="/resultats" onClick={closeMenu}>
               Recherche par ville
             </Link>
           </li>
-
-          <li className="px-2 rounded-lg hover:bg-sky-300 hover:text-white hover:scale-105">
+          {!isMenuOpen && "|"}
+          <li className="px-4 rounded-lg hover:bg-sky-300 hover:text-white hover:scale-105">
             <Link href="/contact" onClick={closeMenu}>
               Contact
             </Link>

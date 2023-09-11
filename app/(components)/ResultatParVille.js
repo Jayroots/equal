@@ -78,7 +78,7 @@ async function ResultatParVille({ id: codeCommune }) {
   let dataPolluants = await fetchDatasPolluants(codeCommune);
 
   return (
-    <>
+    <section className="md:flex md:flex-cols md:flex-wrap md:w-9/10 md:mx-auto md:p-5 ">
       <ul className=" flex w-4/5 mx-auto justify-center border-2 rounded-xl shadow-sm p-5 text-white bg-sky-300 m-5 lg:w-2/5 ">
         {commune !== undefined && (
           <div className="flex flex-col	 ">
@@ -128,7 +128,7 @@ async function ResultatParVille({ id: codeCommune }) {
       <div className=" flex justify-center m-6">
         <Reseaux codeCommune={codeCommune} reseaux={commune.reseaux} />
       </div>
-    </>
+    </section>
   );
 }
 
