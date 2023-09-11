@@ -57,7 +57,7 @@ const BarreRecherche = () => {
                   onClick={() =>
                     handleListItemClick(element.codeCommune, element.nomCommune)
                   }
-                  key={element.index}
+                  key={index}
                   id={element.codeCommune}
                 >
                   {element.nomCommune}
