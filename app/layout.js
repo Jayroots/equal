@@ -21,12 +21,7 @@ export default function RootLayout({ children }) {
             </div>
 
             <Link className="flex items-center" href="/">
-              <h1
-                style={{
-                  fontFamily: "Ysabeau, sans-serif",
-                }}
-                className=" text-2xl md:text-4xl px-2 font-semibold hover:scale-125 md:px-5 "
-              >
+              <h1 className=" font-sans text-2xl md:text-4xl px-2 font-semibold hover:scale-125 md:px-5 ">
                 E Qual
               </h1>
             </Link>
