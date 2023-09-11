@@ -14,7 +14,6 @@ function NavBar() {
   return (
     <nav className=" p-4">
       <div className="max-w-screen-lg mx-auto">
-        {/* Bouton de déclenchement du menu burger */}
         <button
           className="lg:hidden block  hover:scale-125"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -28,7 +27,6 @@ function NavBar() {
           />
         </button>
 
-        {/* Menu en mode mobile (menu burger) */}
         <ul
           className={`${
             isMenuOpen

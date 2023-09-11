@@ -1,11 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 const Localisation = () => {
-  const [userLocation, setUserLocation] = useState(null);
-
   const router = useRouter();
 
   const handleClick = () => {

@@ -7,7 +7,7 @@ import codePostauxReduits from "../(donnees)/codePostauxReduits";
 const BarreRecherche = () => {
   const [value, setValue] = useState("");
   const [listeOuverte, setListeOuverte] = useState(true);
-  const [selectedCodeCommune, setSelectedCodeCommune] = useState(""); // Stocke le code de commune sélectionné
+  const [selectedCodeCommune, setSelectedCodeCommune] = useState("");
   const router = useRouter();
 
   function handleChange(event) {
@@ -21,9 +21,9 @@ const BarreRecherche = () => {
   }
 
   function handleListItemClick(codeCommune, nomCommune) {
-    setSelectedCodeCommune(codeCommune); // Met à jour le code de commune sélectionné
-    setListeOuverte(false); // Cache la liste après la sélection
-    setValue(nomCommune); // Efface la valeur de l'input
+    setSelectedCodeCommune(codeCommune);
+    setListeOuverte(false);
+    setValue(nomCommune);
   }
 
   return (
@@ -56,8 +56,8 @@ const BarreRecherche = () => {
                   className="hover:cursor-pointer"
                   onClick={() =>
                     handleListItemClick(element.codeCommune, element.nomCommune)
-                  } // Utilisez le codeCommune comme argument
-                  key={index}
+                  }
+                  key={element.index}
                   id={element.codeCommune}
                 >
                   {element.nomCommune}

@@ -54,6 +54,7 @@ const construireDataPolluantsParametre = (codeParametre, dataFetched) => {
     departement: dataPourParametre[0]?.nom_departement,
     parametre: dataPourParametre[0]?.libelle_parametre,
     unite: dataPourParametre[0]?.libelle_unite,
+    limite_qualite_parametre: dataPourParametre[0]?.limite_qualite_parametre,
 
     data: dataPourParametre.map((el) => ({
       valeur: el.resultat_numerique,
@@ -75,7 +76,6 @@ const construireDataPolluants = (dataFetched) => {
 async function ResultatParVille({ id: codeCommune }) {
   let commune = await fetchDatas(codeCommune);
   let dataPolluants = await fetchDatasPolluants(codeCommune);
-  console.log("dataPolluants", dataPolluants);
 
   return (
     <>
@@ -87,14 +87,9 @@ async function ResultatParVille({ id: codeCommune }) {
               <li>Département : {commune.nomDepartement}</li>
               <br />
 
-              <li>
-                Prélèvement bactérien (N= Non Conforme, C = Conforme) :{" "}
-                {commune.bact_prelevement}
-              </li>
-              <li>
-                Prélèvement pc (N= Non Conforme, C = Conforme) :{" "}
-                {commune.pc_prelevement}
-              </li>
+              <li>Prélèvement bactérien : {commune.bact_prelevement}</li>
+              <li>Prélèvement pc : {commune.pc_prelevement}</li>
+              <li>(N= Non Conforme, C = Conforme)</li>
               <br />
               <li>
                 <b>Description :</b>

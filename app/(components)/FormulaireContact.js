@@ -30,14 +30,14 @@ const FormulaireContact = () => {
       ref={form}
       onSubmit={sendEmail}
     >
-      <label>* Nom</label>
+      <label>Nom</label>
       <input
         className="lg:w-1/3 border-2 rounded-md m-2 p-1 hover:bg-sky-200"
         type="text"
         name="name"
         required
       />
-      <label>* Prénom</label>
+      <label>Prénom</label>
 
       <input
         className="lg:w-1/3 border-2 rounded-md m-2 p-1 hover:bg-sky-200"

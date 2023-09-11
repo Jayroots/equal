@@ -48,7 +48,7 @@ const TopNvilles = () => {
   };
 
   return (
-    <div
+    <section
       /*  style={{ backgroundImage: "url('/goutte.jpg')" }}*/
       className="bg-slate-100 p-5 text-center"
     >
@@ -80,7 +80,7 @@ const TopNvilles = () => {
           })}
         </ul>
       )}
-    </div>
+    </section>
   );
 };
 

@@ -16,6 +16,16 @@ const Polluants = ({ dataPolluants }) => {
               {dataPolluants.parametre} en {dataPolluants.unite}
             </p>
             <Tableau data={dataPolluants.data} />
+            <br />
+            {dataPolluants.limite_qualite_parametre && (
+              <>
+                {" "}
+                <p className="text-center">
+                  Référence qualité: {dataPolluants.limite_qualite_parametre}
+                </p>
+                <br />
+              </>
+            )}
           </>
         )
       ) : (
