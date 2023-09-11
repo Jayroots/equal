@@ -21,7 +21,10 @@ export default function RootLayout({ children }) {
             </div>
 
             <Link href="/">
-              <h1 className=" font-sans text-2xl md:text-4xl px-5 font-semibold hover:scale-125">
+              <h1
+                style={{ fontFamily: "Ysabeau Office" }}
+                className=" text-2xl md:text-4xl px-5 font-semibold hover:scale-125"
+              >
                 E Qual
               </h1>
             </Link>

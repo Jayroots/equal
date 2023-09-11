@@ -18,7 +18,7 @@ const Dernieres5valeurs = ({ codeCommune }) => {
   }, []);
 
   return (
-    <div className="flex flex-wrap justify-center items-center p-4 lg:w-3/5 lg:mx-auto">
+    <section className="flex flex-wrap justify-center items-center p-4 lg:w-3/5 lg:mx-auto">
       {valeurs !== undefined ? (
         valeurs.map((el) => (
           <div
@@ -43,7 +43,7 @@ const Dernieres5valeurs = ({ codeCommune }) => {
       ) : (
         <p>Loading ...</p>
       )}
-    </div>
+    </section>
   );
 };
 

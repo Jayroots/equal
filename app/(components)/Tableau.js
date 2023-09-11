@@ -3,7 +3,6 @@ import * as d3 from "d3";
 import React, { useEffect, useRef } from "react";
 
 const Tableau = ({ data }) => {
-  console.log("TABLEAU", data);
   const svgRef = useRef();
 
   useEffect(() => {

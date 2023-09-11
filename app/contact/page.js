@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Contact() {
   return (
     <main className="flex flex-wrap p-6  md:justify-around md:items-center  ">
-      <div className="md:w-2/5 p-6">
+      <section className="md:w-2/5 p-6">
         <Image
           className=""
           width={6331}
@@ -12,7 +12,7 @@ export default function Contact() {
           src="/gif-eau.png"
           alt="gif eau robinet geant"
         />
-      </div>
+      </section>
 
       <FormulaireContact />
     </main>
