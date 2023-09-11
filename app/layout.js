@@ -16,14 +16,16 @@ export default function RootLayout({ children }) {
       <body className="">
         <header className="flex flex-row justify-between py-10 w-full ">
           <section className="flex flex-row px-5">
-            <div className="w-12">
+            <div className="w-12 flex items-center">
               <LottieAnimation />
             </div>
 
-            <Link href="/">
+            <Link className="flex items-center" href="/">
               <h1
-                style={{ fontFamily: "Ysabeau Office, sans-serif" }}
-                className=" text-2xl md:text-4xl px-5 font-semibold hover:scale-125"
+                style={{
+                  fontFamily: "Ysabeau, sans-serif",
+                }}
+                className=" text-2xl md:text-4xl px-2 font-semibold hover:scale-125 md:px-5 "
               >
                 E Qual
               </h1>
