@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
 
             <Link href="/">
               <h1
-                style={{ fontFamily: "Ysabeau Office, sans serif" }}
+                style={{ fontFamily: "Ysabeau Office, sans-serif" }}
                 className=" text-2xl md:text-4xl px-5 font-semibold hover:scale-125"
               >
                 E Qual
