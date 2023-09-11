@@ -5,9 +5,8 @@ export default function Contact() {
   return (
     <main className="flex flex-wrap p-6  md:justify-around md:items-center  ">
       <div className="md:w-2/5 p-6">
-        {/* absolute top-10 left-10 */}
         <Image
-          className="hover:scale-105 "
+          className=""
           width={6331}
           height={4297}
           src="/gif-eau.png"

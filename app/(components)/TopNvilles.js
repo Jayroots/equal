@@ -1,17 +1,25 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import TopNvillesCard from "./TopNvillesCard";
+import Loading from "../resultats/[id]/loading";
 
 const TopNvilles = () => {
-  const [communesN, setCommunesN] = useState([]);
+  const [communesN, setCommunesN] = useState();
   const [menuOuvert, setMenuOuvert] = useState(false);
+  const [fetchEnCours, setFetchEnCours] = useState(false);
 
   const handleClick = () => {
-    setMenuOuvert(!menuOuvert);
+    if (!communesN) {
+      lancerFetch();
+    } else {
+      setMenuOuvert(!menuOuvert);
+    }
   };
 
   const construireData = (dataFetched) => {
+    setFetchEnCours(false);
+    setMenuOuvert(true);
     setCommunesN(
       dataFetched
         .map((d) => ({
@@ -29,16 +37,15 @@ const TopNvilles = () => {
     );
   };
 
-  useEffect(() => {
+  const lancerFetch = () => {
+    setFetchEnCours(true);
     fetch(
       "https://hubeau.eaufrance.fr/api/v1/qualite_eau_potable/resultats_dis?conformite_limites_bact_prelevement=N&conformite_limites_pc_prelevement=N"
     )
       .then((response) => response.json())
       .then((res) => construireData(res.data))
       .catch((err) => console.error(err));
-  }, []);
-
-  useEffect(() => {}, [communesN]);
+  };
 
   return (
     <div
@@ -54,6 +61,11 @@ const TopNvilles = () => {
           Cliquez pour voir les résultats
         </p>
       </button>
+      {fetchEnCours && (
+        <div className="">
+          <Loading />
+        </div>
+      )}
       {menuOuvert && (
         <ul className="flex flex-wrap justify-center w-4/5 lg:w-11/12 mx-auto ">
           {communesN.map((el) => {

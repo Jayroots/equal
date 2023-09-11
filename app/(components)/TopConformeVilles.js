@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import TopConformeVillesCard from "./TopConformeVillesCard";
+import Loading from "../resultats/[id]/loading";
 
 const TopConformeVilles = () => {
   const [communesN, setCommunesN] = useState();
@@ -60,7 +61,11 @@ const TopConformeVilles = () => {
           Cliquez pour voir les résultats
         </p>
       </button>
-      {fetchEnCours && <div>Chargement en cours...</div>}
+      {fetchEnCours && (
+        <div className="">
+          <Loading />
+        </div>
+      )}
       {menuOuvert && (
         <ul className="flex flex-wrap justify-center w-4/5 lg:w-11/12 mx-auto ">
           {communesN.map((el) => {

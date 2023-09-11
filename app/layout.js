@@ -6,8 +6,8 @@ import "./globals.css";
 import Link from "next/link";
 
 export const metadata = {
-  title: "E Qual, service pour la qualité de l eau en France",
-  description: "E Qual, service pour la qualité de l eau en France",
+  title: "E Qual, service pour la qualité de l'eau en France",
+  description: "E Qual, service pour la qualité de l'eau en France",
 };
 
 export default function RootLayout({ children }) {
@@ -19,10 +19,9 @@ export default function RootLayout({ children }) {
             <div className="w-12">
               <LottieAnimation />
             </div>
-            {/* <img className="w-9" src="/goutte.jpg" alt="logo E Qual"></img> */}
+
             <Link href="/">
-              {" "}
-              <h1 className=" font-sans text-4xl px-5 font-semibold hover:scale-125">
+              <h1 className=" font-sans text-2xl md:text-4xl px-5 font-semibold hover:scale-125">
                 E Qual
               </h1>
             </Link>
